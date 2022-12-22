@@ -10,6 +10,7 @@
     "import-summary-example": "npm run build && node build/examples/import-api/import-summary.js",
     "import-category-example": "npm run build && node build/examples/import-api/import-category.js",
     "import-product-type-example": "npm run build && node build/examples/import-api/import-product-type.js",
+    "import-product-draft-example": "npm run build && node build/examples/import-api/import-product-draft.js",
     "build": "rimraf ./build && tsc"
   },
   "keywords": [],
