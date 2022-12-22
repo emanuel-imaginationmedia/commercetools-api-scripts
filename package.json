@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build && node build/index.js",
     "import-container-example": "npm run build && node build/examples/import-api/import-container.js",
+    "import-operation-example": "npm run build && node build/examples/import-api/import-operation.js",
     "build": "rimraf ./build && tsc"
   },
   "keywords": [],
