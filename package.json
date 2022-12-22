@@ -8,6 +8,7 @@
     "import-container-example": "npm run build && node build/examples/import-api/import-container.js",
     "import-operation-example": "npm run build && node build/examples/import-api/import-operation.js",
     "import-summary-example": "npm run build && node build/examples/import-api/import-summary.js",
+    "import-category-example": "npm run build && node build/examples/import-api/import-category.js",
     "build": "rimraf ./build && tsc"
   },
   "keywords": [],
