@@ -4,14 +4,16 @@
   "description": "Helper scripts for commercetools API",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf ./build",
+    "copy-files": "copyfiles -u 1 \"src/assets/**/*\" build",
+    "build": "npm run clean && tsc && npm run copy-files",
     "start": "npm run build && node build/index.js",
     "import-container-example": "npm run build && node build/examples/import-api/import-container.js",
     "import-operation-example": "npm run build && node build/examples/import-api/import-operation.js",
     "import-summary-example": "npm run build && node build/examples/import-api/import-summary.js",
     "import-category-example": "npm run build && node build/examples/import-api/import-category.js",
     "import-product-type-example": "npm run build && node build/examples/import-api/import-product-type.js",
-    "import-product-draft-example": "npm run build && node build/examples/import-api/import-product-draft.js",
-    "build": "rimraf ./build && tsc"
+    "import-product-draft-example": "npm run build && node build/examples/import-api/import-product-draft.js"
   },
   "keywords": [],
   "author": "Emanuel Massafera",
@@ -21,11 +23,13 @@
     "@commercetools/platform-sdk": "^4.3.0",
     "@commercetools/sdk-client-v2": "^2.1.1",
     "cli-highlight": "^2.1.11",
+    "csvtojson": "^2.0.10",
     "dotenv": "^16.0.3",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.6.2",
+    "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"

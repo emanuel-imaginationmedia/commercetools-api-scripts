@@ -1,0 +1,4 @@
+productType,categories,sku,productName,productDescription,basePrice,currencyCode,images,booleanAttribute,enumAttribute
+import-product-type,"import-category",SKU001,Product A,Good description,1123,USD,"https://picsum.photos/1400/1400?grayscale",false,first-option
+import-product-type,"import-category,import-category-3",SKU002,Product B,Good description,1000,USD,"https://picsum.photos/1400/1400?grayscale",true,first-option
+import-product-type,"import-category-2",SKU003,Product C,Good description,5000,USD,"https://picsum.photos/1400/1400?grayscale,https://picsum.photos/1400/1400",true,second-option
