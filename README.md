@@ -6,7 +6,7 @@ Helper scripts of general purpose for Commercetools API features.
 
 ## Features
 
-- Import API: container, operation, summary, product type, category and product draft.
+- Import API: container, operation, summary, category, product type, product, product draft, product variant, product variant patch, inventory, embedded price, standalone price, order, order patch and customer.
 
 ---
 
