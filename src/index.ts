@@ -1,1 +1,3 @@
-console.log('Helper scripts for commercetools API');
+import { log } from './utils/logger';
+
+log('Helper scripts for Commercetools API');
