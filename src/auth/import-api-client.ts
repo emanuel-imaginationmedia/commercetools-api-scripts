@@ -5,26 +5,32 @@ import fetch from 'node-fetch';
 import { Config, readConfig, Prefix } from '../utils/config';
 
 const createImportApiClient = () => {
-    const { clientId, clientSecret, projectKey, oauthHost, host }: Config = readConfig(Prefix.IMPORT);
+  const {
+    clientId, clientSecret, projectKey, oauthHost, host,
+  }: Config = readConfig(Prefix.IMPORT);
 
-    const authMiddlewareOptions: AuthMiddlewareOptions = {
-        credentials: {
-            clientId: clientId,
-            clientSecret: clientSecret,
-        },
-        projectKey: projectKey,
-        host: oauthHost,
-        fetch: fetch,
-    };
+  const authMiddlewareOptions: AuthMiddlewareOptions = {
+    credentials: {
+      clientId,
+      clientSecret,
+    },
+    projectKey,
+    host: oauthHost,
+    fetch,
+  };
 
-    const httpMiddlewareOptions: HttpMiddlewareOptions = {
-        host: host,
-        fetch: fetch,
-    };
+  const httpMiddlewareOptions: HttpMiddlewareOptions = {
+    host,
+    fetch,
+  };
 
-    const client = new ClientBuilder().withClientCredentialsFlow(authMiddlewareOptions).withHttpMiddleware(httpMiddlewareOptions).build();
+  const client = new ClientBuilder()
+    .withClientCredentialsFlow(authMiddlewareOptions)
+    .withHttpMiddleware(httpMiddlewareOptions)
+    .build();
 
-    return createApiBuilderFromCtpClient(client).withProjectKeyValue({ projectKey: projectKey });
+  return createApiBuilderFromCtpClient(client)
+    .withProjectKeyValue({ projectKey });
 };
 
 export const importApiClient: ImportApiClient = createImportApiClient();

@@ -2,15 +2,15 @@ import { getImportOperation, getImportOperations } from '../../services/import-a
 import { log } from '../../utils/logger';
 
 (async () => {
-    try {
-        // Get import operations
-        const getImportOperationsResponse = await getImportOperations('emm-import-container');
-        log(getImportOperationsResponse);
+  try {
+    // Get import operations
+    const getImportOperationsResponse = await getImportOperations('emm-import-container');
+    log(getImportOperationsResponse);
 
-        // Get an import operation
-        const getImportOperationResponse = await getImportOperation('id');
-        log(getImportOperationResponse);
-    } catch (error) {
-        log(error);
-    }
+    // Get an import operation
+    const getImportOperationResponse = await getImportOperation('id');
+    log(getImportOperationResponse);
+  } catch (error) {
+    log(error);
+  }
 })();

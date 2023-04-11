@@ -2,70 +2,70 @@ import { importCustomers } from '../../services/import-api/import-customer';
 import { log } from '../../utils/logger';
 
 (async () => {
-    try {
-        // Import customers
-        const importCustomersResponse = await importCustomers('emm-import-container', {
-            type: 'customer',
-            resources: [
-                {
-                    customerNumber: '12345',
-                    email: 'alice@example.com',
-                    password: 'secret',
-                    firstName: 'Alice',
-                    lastName: 'Doe',
-                    middleName: 'Ruth',
-                    title: 'Ms.',
-                    dateOfBirth: '1980-01-01',
-                    companyName: 'commercetools GmbH',
-                    vatId: '123456789',
-                    addresses: [
-                        {
-                            key: 'wCVKP6iU',
-                            firstName: 'Alice',
-                            country: 'DE',
-                        },
-                        {
-                            key: 'en-wcvK6',
-                            firstName: 'Alice',
-                            country: 'US',
-                        },
-                    ],
-                    defaultShippingAddress: 0,
-                    shippingAddresses: [0, 1],
-                    defaultBillingAddress: 0,
-                    billingAddresses: [0, 1],
-                    isEmailVerified: false,
-                    externalId: 'external-id-123',
-                    customerGroup: {
-                        typeId: 'customer-group',
-                        key: 'customer-group-key',
-                    },
-                    custom: {
-                        type: {
-                            key: 'custom-type',
-                            typeId: 'type',
-                        },
-                        fields: {
-                            'boolean-field': {
-                                type: 'Boolean',
-                                value: true,
-                            },
-                        },
-                    },
-                    locale: 'DE',
-                    salutation: 'Dr.',
-                    key: 'customer-import-resource-key',
-                    stores: [
-                        {
-                            typeId: 'store',
-                            key: 'store-key',
-                        },
-                    ],
-                },
-            ],
-        });
-        log(importCustomersResponse);
-    } catch (error) {
-        log(error);
-    }
+  try {
+    // Import customers
+    const importCustomersResponse = await importCustomers('emm-import-container', {
+      type: 'customer',
+      resources: [
+        {
+          customerNumber: '12345',
+          email: 'alice@example.com',
+          password: 'secret',
+          firstName: 'Alice',
+          lastName: 'Doe',
+          middleName: 'Ruth',
+          title: 'Ms.',
+          dateOfBirth: '1980-01-01',
+          companyName: 'commercetools GmbH',
+          vatId: '123456789',
+          addresses: [
+            {
+              key: 'wCVKP6iU',
+              firstName: 'Alice',
+              country: 'DE',
+            },
+            {
+              key: 'en-wcvK6',
+              firstName: 'Alice',
+              country: 'US',
+            },
+          ],
+          defaultShippingAddress: 0,
+          shippingAddresses: [0, 1],
+          defaultBillingAddress: 0,
+          billingAddresses: [0, 1],
+          isEmailVerified: false,
+          externalId: 'external-id-123',
+          customerGroup: {
+            typeId: 'customer-group',
+            key: 'customer-group-key',
+          },
+          custom: {
+            type: {
+              key: 'custom-type',
+              typeId: 'type',
+            },
+            fields: {
+              'boolean-field': {
+                type: 'Boolean',
+                value: true,
+              },
+            },
+          },
+          locale: 'DE',
+          salutation: 'Dr.',
+          key: 'customer-import-resource-key',
+          stores: [
+            {
+              typeId: 'store',
+              key: 'store-key',
+            },
+          ],
+        },
+      ],
+    });
+    log(importCustomersResponse);
+  } catch (error) {
+    log(error);
+  }
 })();

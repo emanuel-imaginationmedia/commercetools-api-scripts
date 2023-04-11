@@ -2,15 +2,13 @@ import { ProductDraftImportRequest, ClientResponse, ImportResponse } from '@comm
 import { importApiClient } from '../../auth/import-api-client';
 
 export const importProductDrafts = (
-    importContainerKey: string,
-    productDraftImportRequest: ProductDraftImportRequest
-): Promise<ClientResponse<ImportResponse>> => {
-    return importApiClient
-        .productDrafts()
-        .importContainers()
-        .withImportContainerKeyValue({ importContainerKey: importContainerKey })
-        .post({
-            body: productDraftImportRequest,
-        })
-        .execute();
-};
+  importContainerKey: string,
+  productDraftImportRequest: ProductDraftImportRequest,
+): Promise<ClientResponse<ImportResponse>> => importApiClient
+  .productDrafts()
+  .importContainers()
+  .withImportContainerKeyValue({ importContainerKey })
+  .post({
+    body: productDraftImportRequest,
+  })
+  .execute();

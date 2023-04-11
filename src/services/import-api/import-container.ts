@@ -1,46 +1,53 @@
 import {
-    ClientResponse,
-    ImportContainer,
-    ImportContainerDraft,
-    ImportContainerPagedResponse,
-    ImportContainerUpdateDraft,
-    QueryParam,
+  ClientResponse,
+  ImportContainer,
+  ImportContainerDraft,
+  ImportContainerPagedResponse,
+  ImportContainerUpdateDraft,
+  QueryParam,
 } from '@commercetools/importapi-sdk';
 import { importApiClient } from '../../auth/import-api-client';
 
-export const getImportContainer = (importContainerKey: string): Promise<ClientResponse<ImportContainer>> => {
-    return importApiClient.importContainers().withImportContainerKeyValue({ importContainerKey: importContainerKey }).get().execute();
-};
+export const getImportContainer = (
+  importContainerKey: string,
+): Promise<ClientResponse<ImportContainer>> => importApiClient
+  .importContainers()
+  .withImportContainerKeyValue({ importContainerKey })
+  .get()
+  .execute();
 
 export const getImportContainers = (queryArgs?: {
-    limit?: number;
-    offset?: number;
-    sort?: string | string[];
-    [key: string]: QueryParam;
-}): Promise<ClientResponse<ImportContainerPagedResponse>> => {
-    return importApiClient.importContainers().get({ queryArgs: queryArgs }).execute();
-};
+  limit?: number;
+  offset?: number;
+  sort?: string | string[];
+  [key: string]: QueryParam;
+}): Promise<ClientResponse<ImportContainerPagedResponse>> => importApiClient
+  .importContainers()
+  .get({ queryArgs })
+  .execute();
 
-export const createImportContainer = (importContainerDraft: ImportContainerDraft): Promise<ClientResponse<ImportContainer>> => {
-    return importApiClient
-        .importContainers()
-        .post({
-            body: importContainerDraft,
-        })
-        .execute();
-};
+export const createImportContainer = (
+  importContainerDraft: ImportContainerDraft,
+): Promise<ClientResponse<ImportContainer>> => importApiClient
+  .importContainers()
+  .post({
+    body: importContainerDraft,
+  })
+  .execute();
 
 export const updateImportContainer = (
-    importContainerKey: string,
-    importContainerUpdateDraft: ImportContainerUpdateDraft
-): Promise<ClientResponse<ImportContainer>> => {
-    return importApiClient
-        .importContainers()
-        .withImportContainerKeyValue({ importContainerKey: importContainerKey })
-        .put({ body: importContainerUpdateDraft })
-        .execute();
-};
+  importContainerKey: string,
+  importContainerUpdateDraft: ImportContainerUpdateDraft,
+): Promise<ClientResponse<ImportContainer>> => importApiClient
+  .importContainers()
+  .withImportContainerKeyValue({ importContainerKey })
+  .put({ body: importContainerUpdateDraft })
+  .execute();
 
-export const deleteImportContainer = (importContainerKey: string): Promise<ClientResponse<ImportContainer>> => {
-    return importApiClient.importContainers().withImportContainerKeyValue({ importContainerKey: importContainerKey }).delete().execute();
-};
+export const deleteImportContainer = (
+  importContainerKey: string,
+): Promise<ClientResponse<ImportContainer>> => importApiClient
+  .importContainers()
+  .withImportContainerKeyValue({ importContainerKey })
+  .delete()
+  .execute();
