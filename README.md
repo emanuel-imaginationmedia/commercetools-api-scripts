@@ -37,8 +37,8 @@ $ cd commercetools-api-scripts
 # Install dependencies
 $ npm install
 
-# Run prebuilt scripts
-npm run import-container-example
+# Run scripts
+npx tsx src/examples/import-api/import-container.ts
 
 ```
 
