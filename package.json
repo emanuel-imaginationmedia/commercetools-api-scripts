@@ -8,6 +8,7 @@
     "copy-files": "copyfiles -u 1 \"src/assets/**/*\" build",
     "build": "npm run clean && tsc && npm run copy-files",
     "start": "npm run build && node build/index.js",
+    "prepare": "husky install",
     "import-container-example": "npm run build && node build/examples/import-api/import-container.js",
     "import-operation-example": "npm run build && node build/examples/import-api/import-operation.js",
     "import-summary-example": "npm run build && node build/examples/import-api/import-summary.js",
@@ -28,8 +29,11 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
     "@types/node-fetch": "^2.6.2",
     "copyfiles": "^2.4.1",
+    "husky": "^8.0.3",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
